@@ -1,0 +1,53 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+
+body{
+  background: #49a160;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+.container{
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 20vh;
+  border: 1px solid #fff;
+  border-radius: 24px;
+}
+
+
+.signup {
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.login, .forgot{
+  text-align: center;
+  color: #534f4f;
+  margin-bottom: 2em;
+}
+
+input{
+  display: block;
+  width: 350px;
+  height: 50px;
+  
+  margin:  0 auto;
+  margin-bottom: 2em;
+  border-radius: 12px;
+  text-align: center;
+}
+
+input[type=submit]{
+  background-color: #1a1919b6;
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+

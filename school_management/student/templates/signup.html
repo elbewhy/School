@@ -1,10 +1,26 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'signup.css'%}">
 </head>
 <body>
+    <div class="container">
+        
+            <h1 class="signup">Create an account.</h1>
+            <p class="login">Already a member? <a href="#">Sign in</a></p>
+            <form>
+                <input type="email" placeholder="Email" name="username">
+                <input type="password" placeholder="Password" name="password">
+                <input type="password" placeholder="Retype YourPassword" name="password">
+                <input type="submit" value="sign up">
+                <p class="forgot">Forgot Password? <a href="#">Click here</a></p>
+            </form>
 
+       
+   </div>
+</form>
 </body>
 </html>
