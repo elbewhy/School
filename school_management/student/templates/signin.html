@@ -12,8 +12,9 @@
    <div class="container">
         <div class="book">
             <h1 class="login">Welcome Back!</h1>
-            <p class="reg">Don't have an account <a href="#">Register</a></p>
-            <form>
+            <p class="reg">Don't have an account <a href="signup ">Register</a></p>
+            <form method="POST">
+                {% csrf_token %}
                 <input type="email" placeholder="Email" name="username">
                 <input type="password" placeholder="Password" name="password">
                 <input type="submit" value="sign in">

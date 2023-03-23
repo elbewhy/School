@@ -13,5 +13,9 @@ def signin(request):
     return HttpResponse(template.render())
 
 def signup(request):
-    template = loader.get_template('signup.html')
-    return HttpResponse(template.render())
+    if request.method == 'POST':
+        username = request.request.POST['username']
+        print(username)
+    else:
+        template = loader.get_template('signup.html')
+        return HttpResponse(template.render())

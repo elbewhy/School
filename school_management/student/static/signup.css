@@ -3,17 +3,19 @@
 }
 
 body{
-  background: #49a160;
+   background: #49a160;
 }
+  
 
 a{
   text-decoration: none;
   color: #fff;
 }
+
 .container{
   max-width: 400px;
   margin: 0 auto;
-  margin-top: 20vh;
+  margin-top: 15vh;
   border: 1px solid #fff;
   border-radius: 24px;
 }
@@ -28,7 +30,7 @@ a{
 .login, .forgot{
   text-align: center;
   color: #534f4f;
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
 }
 
 input{
@@ -37,7 +39,7 @@ input{
   height: 50px;
   
   margin:  0 auto;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   border-radius: 12px;
   text-align: center;
 }
