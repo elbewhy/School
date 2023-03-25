@@ -1,21 +1,17 @@
 from django.shortcuts import render
 from django.http import  HttpResponse
-from django.template import loader
+ 
 
 # Create your views here.
 def index(request):
-    template = loader.get_template('index.html')
-    return HttpResponse (template.render())
-
-
+    return render(request, 'index.html')
+   
 def signin(request):
-    template = loader.get_template('signin.html')
-    return HttpResponse(template.render())
+    return render(request,"signin.html")
 
-def signup(request):
+def signup(request): 
     if request.method == 'POST':
-        username = request.request.POST['username']
+        username = request.POST['username']
         print(username)
     else:
-        template = loader.get_template('signup.html')
-        return HttpResponse(template.render())
+        return render(request,'signup.html')

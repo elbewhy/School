@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    </head>
+
+    <body>
+
+      
+        <header>
+            <div class="container row">
+                <a href="" class="logo">
+                    <img src="{% static 'images/logo.png' %}" alt="">
+                </a>
+                <nav>
+                    <ul class="menu">
+                        <li class="menu__list"><a href="" class="menu__link">Home</a></li>
+                        <li class="menu__list"><a href=""class="menu__link">About</a></li>
+                        <li class="menu__list"><a href="" class="menu__link">Contact</a></li>
+                    </ul>
+                  
+                </nav>
+    
+                <a href="signin" class="login-btn">Login</a>
+            </div>
+        </header>
+    </body>
+</html>

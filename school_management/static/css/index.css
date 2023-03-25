@@ -1,0 +1,48 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+ 
+}
+
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+header{
+  /* background-color: #fff; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: .5em 0;
+}
+
+.menu{
+  display: flex;
+  gap: 2em;
+}
+
+.menu__list{
+  list-style: none;
+  font-size: 2rem;
+  
+}
+
+.menu__link, .login-btn{
+  text-decoration: none;
+  color: #333;
+}
+
+.login-btn{
+  font-size:2rem ;
+}
