@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +12,19 @@
         
             <h1 class="signup">Create an account.</h1>
             <p class="login">Already a member? <a href="signin">Sign in</a></p>
+
+            <div>
+                {% for message in messages %}
+                <h5 class="error">{{message}}</h5>
+                {% endfor %}
+            </div>
+
             <form action="" method="POST">
                 {% csrf_token %}
-                <input type="text " placeholder="Username" name="username">
-                <input type="email" placeholder="Email" name="email">
-                <input type="password" placeholder="Password" name="password">
-                <input type="password" placeholder="Confirm Password" name="password2">
+                <input type="text" name="username" placeholder="Username">
+                <input type="email" name="email" placeholder="Email" >
+                <input type="password" name="password" placeholder="Password" >
+                <input type="password" name="password2" placeholder="Confirm Password">
                 <input type="submit" value="sign up">
                 <p class="forgot">Forgot Password? <a href="#">Click here</a></p>
             </form>

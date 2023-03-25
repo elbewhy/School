@@ -13,10 +13,18 @@
         <div class="book">
             <h1 class="login">Welcome Back!</h1>
             <p class="reg">Don't have an account <a href="signup ">Register</a></p>
-            <form method="POST">
+
+            
+            <div>
+                {% for message in messages %}
+                <h5 class="error">{{message}}</h5>
+                {% endfor %}
+            </div>
+
+            <form  action="" method="POST">
                 {% csrf_token %}
-                <input type="email" placeholder="Email" name="username">
-                <input type="password" placeholder="Password" name="password">
+                <input type="text" name="username" placeholder="Username" >
+                <input type="password" name="password" placeholder="Password">
                 <input type="submit" value="sign in">
                 <p class="forgot">Forgot Password? <a href="#">Click here</a></p>
             </form>
