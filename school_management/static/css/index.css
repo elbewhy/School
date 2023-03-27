@@ -27,6 +27,10 @@ header{
   padding: .5em 0;
 }
 
+.nav{
+  display: flex;
+  gap : 3em
+}
 .menu{
   display: flex;
   gap: 2em;
@@ -38,11 +42,78 @@ header{
   
 }
 
+
+
 .menu__link, .login-btn{
   text-decoration: none;
   color: #333;
 }
 
 .login-btn{
-  font-size:2rem ;
+  font-size:1.5rem;
+  padding: .5em 1.5em;
+  border-radius: 12px;
+  background-image: linear-gradient(to right,#308269,
+  #008d87, #00ae73);
+  color: #f0f8ff;
+  cursor: pointer;
+  border: 1px solid green;
+
+}
+
+.login-btn:hover{
+  opacity: .75;
+  transition: 2s;
+}
+
+.hero{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* width: 100%; */
+  /* background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url("/static/images/hero2.jpeg"); */
+  background-image: linear-gradient(rgba(105, 156, 125, 0.7),rgba(82, 121, 119, 0.7)), url("/static/images/hero2.jpeg"); 
+ 
+  /* background-position: center; */
+  
+  background-size: cover;
+}
+ 
+.hero__text{
+  text-align: center;
+  color: #fff;
+}
+
+  
+
+.main__head{
+  font-size: 4.2rem;
+  /* margin: 0; */
+}
+
+.sub__head{
+  margin: 10px 0 40px;
+  font-size: 1.4rem;
+}
+
+.hero-btn{
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 1.2em  1.4em;
+  background: transparent;
+  cursor:  pointer;
+}
+
+.hero-btn:hover{
+  opacity: .75;
+  background-image: linear-gradient(to right,#308269,
+  #008d87, #00ae73);
+  transition: 1s;
+  border: 1px solid #00ae73;
 }
