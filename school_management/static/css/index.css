@@ -5,6 +5,7 @@
 body{
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 .container{
@@ -14,41 +15,61 @@ body{
  
 }
 
-.row{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
 
 header{
   /* background-color: #fff; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: .5em 0;
+  padding: .3em 0;
 }
 
 .nav{
   display: flex;
-  gap : 3em
+  justify-content: space-between;
+  align-items: center;
 }
-.menu{
-  display: flex;
-  gap: 2em;
+.logo img{
+  width: 70px;
+}
+
+.nav_links{
+  flex: 1;
+  text-align: right;
 }
 
 .menu__list{
   list-style: none;
-  font-size: 2rem;
-  
+  display: inline-block;
+  padding: 8px 12px;
+  /* position: relative; */
 }
-
-
-
-.menu__link, .login-btn{
+ 
+.menu__link,.login-btn{
   text-decoration: none;
   color: #333;
 }
 
+.menu__link{
+  font-size: 1.3rem;
+}
+
+.menu__link::after{
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #00ae73;
+  display: block;
+  margin: auto;
+  transition: .5s;
+}
+
+.menu__link:hover::after{
+  width: 50%;
+}
+
+.fa{
+  display: none;
+}
 .login-btn{
   font-size:1.5rem;
   padding: .5em 1.5em;

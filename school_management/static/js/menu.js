@@ -1,3 +1,9 @@
-function myFunction(x){
-  x.classList.toggle("change")
+var navLinks = document.getElementsByid('navLinks');
+
+function showMenu(){
+  navLinks.style.right = "0";
+}
+
+function hideMenu(){
+  navLinks.style.right = "200px";
 }

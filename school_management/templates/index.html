@@ -5,6 +5,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,500&display=swap" rel="stylesheet">
         <title>Home</title>
         <link rel="stylesheet" href="{% static 'css/index.css' %}">
         <link rel="stylesheet" href="{% static 'responsive/res_index.css' %}">
@@ -14,41 +18,24 @@
 
       
         <header>
-            <div class="container row">
-                <!-- <div class="navbar-toggle" id="js-navbar-toggle">
-                    <i class="fa fa-bars"></i>
-                  </div> -->
-
-                <a href="" class="logo">
-                    <img src="{% static 'images/logo.png' %}" alt="">
-                </a>
-
-                <!-- <div class="con" onclick="myFunction(this)">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                </div> -->
-
-                
+            <div class="container">
                 <nav class="nav">
-                   
-                    <div class="con" onclick="myFunction(this)">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
-                    </div>
+                    <a href="" class="logo">
+                        <img src="{% static 'images/logo.png' %}" alt="">
+                    </a>
+                    <div class="nav_links" id="navLinks">
+                        <i class="fa fa-times" onclick="hideMenu()"></i>
                     <ul class="menu">
                         <li class="menu__list"><a href="" class="menu__link">Home</a></li>
                         <li class="menu__list"><a href=""class="menu__link">About</a></li>
                         <li class="menu__list"><a href="" class="menu__link">Contact</a></li>
                         <li class="menu__list"><a href="signin" class="login-btn">Login</a></li>
-                    </ul>
-
-                  
-                  
+                    </ul>  
                     
+                    </div>
+                    <i class="fa fa-bars" onclick="showMenu()"></i>
                 </nav>
-    
+                
                 
             </div>
         </header>
