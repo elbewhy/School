@@ -1,0 +1,140 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container{
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+ 
+}
+
+
+
+header{
+  /* background-color: #fff; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: .3em 0;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img{
+  width: 70px;
+}
+
+.nav_links{
+  flex: 1;
+  text-align: right;
+}
+
+.menu__list{
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  /* position: relative; */
+}
+ 
+.menu__link,.login-btn{
+  text-decoration: none;
+  color: #333;
+}
+
+.menu__link{
+  font-size: 1.3rem;
+}
+
+.menu__link::after{
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #00ae73;
+  display: block;
+  margin: auto;
+  transition: .5s;
+}
+
+.menu__link:hover::after{
+  width: 50%;
+}
+
+.fa{
+  display: none;
+}
+.login-btn{
+  font-size:1.5rem;
+  padding: .5em 1.5em;
+  border-radius: 12px;
+  background-image: linear-gradient(to right,#308269,
+  #008d87, #00ae73);
+  color: #f0f8ff;
+  cursor: pointer;
+  border: 1px solid green;
+
+}
+
+.login-btn:hover{
+  opacity: .75;
+  transition: 2s;
+}
+
+.hero{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* width: 100%; */
+  /* background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url("/static/images/hero2.jpeg"); */
+  background-image: linear-gradient(rgba(105, 156, 125, 0.7),rgba(82, 121, 119, 0.7)), url("/static/images/hero2.jpeg"); 
+ 
+  /* background-position: center; */
+  
+  background-size: cover;
+}
+ 
+.hero__text{
+  text-align: center;
+  color: #fff;
+}
+
+  
+
+.main__head{
+  font-size: 4.2rem;
+  /* margin: 0; */
+}
+
+.sub__head{
+  margin: 10px 0 40px;
+  font-size: 1.4rem;
+}
+
+.hero-btn{
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 1.2em  1.4em;
+  background: transparent;
+  cursor:  pointer;
+}
+
+.hero-btn:hover{
+  opacity: .75;
+  background-image: linear-gradient(to right,#308269,
+  #008d87, #00ae73);
+  transition: 1s;
+  border: 1px solid #00ae73;
+}
