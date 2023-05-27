@@ -13,6 +13,52 @@ a{
   color: #fff;
 }
 
+header{
+  background-color: #fff;
+  padding: .6em 0;
+  margin: -8px -8px;
+}
+
+.con{
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+ 
+}
+.logo img{
+  width: 70px;
+}
+
+.menu__list{
+  list-style: none;
+}
+.menu__link{
+  font-size:1.5rem;
+  padding: .5em 1.5em;
+  border-radius: 12px;
+  background-image: linear-gradient(to right,#308269,
+   #008d87, #00ae73);
+  color: #f0f8ff;
+  cursor: pointer;
+  border: 1px solid green;
+}
+
+
+
+.menu__link:hover{
+  opacity: .75;
+  transition: 2s;
+}
+
 .container{
   max-width: 400px;
   margin: 0 auto;

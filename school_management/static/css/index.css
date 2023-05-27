@@ -18,7 +18,7 @@ body{
 
 
 header{
-  /* background-color: #fff; */
+  background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: .3em 0;
 }
@@ -74,7 +74,7 @@ header{
   font-size:1.5rem;
   padding: .5em 1.5em;
   border-radius: 12px;
-  background-image: linear-gradient(to right,#308269,
+  background-image: linear-gradient(to right,#befae8,
   #008d87, #00ae73);
   color: #f0f8ff;
   cursor: pointer;

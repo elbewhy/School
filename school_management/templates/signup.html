@@ -5,32 +5,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="{% static 'css/signup.css'%}">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
 </head>
 <body>
+    <header>
+        <div class="con">
+            <nav class="nav">
+                <a href="/" class="logo">
+                    <img src="{% static 'images/logo.png' %}" alt="">
+                </a>
+                <ul class="menu">
+                    <li class="menu__list"><a href="{% url 'signin' %}" class="menu__link">Sign In</a></li>
+                </ul>  
+            </nav>
+        </div>
+    </header>
+
     <div class="container">
-        
-            <h1 class="signup">Create an account.</h1>
-            <p class="login">Already a member? <a href="signin">Sign in</a></p>
+        <h1 class="signup">Create an account.</h1>
 
-            <div>
-                {% for message in messages %}
-                <h5 class="error">{{message}}</h5>
-                {% endfor %}
-            </div>
+        <div>
+            {% for message in messages %}
+            <h5 class="error">{{ message }}</h5>
+            {% endfor %}
+        </div>
 
-            <form action="" method="POST">
-                {% csrf_token %}
-                <input type="text" name="username" placeholder="Username">
-                <input type="email" name="email" placeholder="Email" >
-                <input type="password" name="password" placeholder="Password" >
-                <input type="password" name="password2" placeholder="Confirm Password">
-                <input type="submit" value="sign up">
-                <p class="forgot">Forgot Password? <a href="#">Click here</a></p>
-            </form>
-
-       
+        <form action="{% url 'signup' %}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username">
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password2" placeholder="Confirm Password">
+            <input type="submit" value="Sign Up">
+            <p class="forgot">Forgot Password? <a href="#">Click here</a></p>
+        </form>
    </div>
-</form>
 </body>
 </html>

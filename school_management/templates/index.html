@@ -1,62 +1,64 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-          <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,500&display=swap" rel="stylesheet">
-        <title>Home</title>
-        <link rel="stylesheet" href="{% static 'css/index.css' %}">
-        <link rel="stylesheet" href="{% static 'responsive/res_index.css' %}">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <header>
+        <div class="con">
+            <nav class="nav">
+                <a href="/" class="logo">
+                    <img src="{% static 'images/logo.png' %}" alt="">
+                </a>
+                <ul class="menu">
+                    <li class="menu__list"><a href="{% url 'signin' %}" class="menu__link">Sign In</a></li>
+                    <li class="menu__list"><a href="{% url 'signup' %}" class="menu__link">Sign Up</a></li>
+                </ul>  
+            </nav>
+        </div>
+    </header>
 
-    <body>
+    <<div class="container">
+      <h1>Welcome to the Dashboard, {{ request.user.username }}</h1>
+  
+      <h2>Enrolled Courses</h2>
+      <ul>
+          {% for course in enrolled_courses %}
+              <li><a href="{% url 'course_details' course.id %}">{{ course.title }}</a></li>
+          {% empty %}
+              <li>No enrolled courses found.</li>
+          {% endfor %}
+      </ul>
+  
+      <h2>Upcoming Assignments</h2>
+      <ul>
+          {% for assignment in upcoming_assignments %}
+              <li>{{ assignment.title }} - Due on {{ assignment.due_date }}</li>
+          {% empty %}
+              <li>No upcoming assignments.</li>
+          {% endfor %}
+      </ul>
+  
+      <h2>Announcements</h2>
+      <ul>
+          {% for announcement in announcements %}
+              <li>{{ announcement.title }} - {{ announcement.date }}</li>
+          {% empty %}
+              <li>No announcements.</li>
+          {% endfor %}
+      </ul>
+  </div>
+  
 
-      
-        <header>
-            <div class="container">
-                <nav class="nav">
-                    <a href="" class="logo">
-                        <img src="{% static 'images/logo.png' %}" alt="">
-                    </a>
-                    <div class="nav_links" id="navLinks">
-                        <i class="fa fa-times" onclick="hideMenu()"></i>
-                    <ul class="menu">
-                        <li class="menu__list"><a href="" class="menu__link">Home</a></li>
-                        <li class="menu__list"><a href=""class="menu__link">About</a></li>
-                        <li class="menu__list"><a href="" class="menu__link">Contact</a></li>
-                        <li class="menu__list"><a href="signin" class="login-btn">Login</a></li>
-                    </ul>  
-                    
-                    </div>
-                    <i class="fa fa-bars" onclick="showMenu()"></i>
-                </nav>
-                
-                
-            </div>
-        </header>
+    <!-- Assuming you have a list of courses -->
+    {% for course in courses %}
+      <h2><a href="{% url 'course_details' course.id %}">{{ course.title }}</a></h2>
+      <!-- Display other course information if needed -->
+    {% endfor %}
 
-        <section class="hero">
-            <div class="hero__text">
-                <h1 class="main__head">
-                    WELCOME TO KSUSTA
-                </h1>
-                <p class="sub__head">
-                    The Kebbi State University of Science and 
-                    Technology (KSUSTA) is a state-owned university in Aliero,<br> Kebbi State, Nigeria. KSUSTA offers 
-                    programmes in agriculture and sciences, among others
-                </p>
-                <a href="" class="hero-btn">Vist Us to know more</a>
-            </div>
-            
-        </section>
-
-        <script src="{% static 'js/menu.js' %}"></script>
-            
-      
-    </body>
+</body>
 </html>

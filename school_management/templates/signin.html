@@ -1,35 +1,42 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Sign In</title>
-   <link href="{% static 'css/signin.css' %}" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="static/signIn.css"> -->
-
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}">
 </head>
 <body>
-   <div class="container">
-        <div class="book">
-            <h1 class="login">Welcome Back!</h1>
-            <p class="reg">Don't have an account <a href="signup ">Register</a></p>
-
-            
-            <div>
-                {% for message in messages %}
-                <h5 class="error">{{message}}</h5>
-                {% endfor %}
-            </div>
-
-            <form  action="" method="POST">
-                {% csrf_token %}
-                <input type="text" name="username" placeholder="Username" >
-                <input type="password" name="password" placeholder="Password">
-                <input type="submit" value="sign in">
-                <p class="forgot">Forgot Password? <a href="#">Click here</a></p>
-            </form>
+    <header>
+        <div class="con">
+            <nav class="nav">
+                <a href="/" class="logo">
+                    <img src="{% static 'images/logo.png' %}" alt="">
+                </a>
+                <ul class="menu">
+                    <li class="menu__list"><a href="{% url 'signup' %}" class="menu__link">Sign Up</a></li>
+                </ul>  
+            </nav>
         </div>
-       
-   </div>
+    </header>
+
+    <div class="container">
+        <h1 class="signin">Sign In</h1>
+
+        <div>
+            {% for message in messages %}
+            <h5 class="error">{{ message }}</h5>
+            {% endfor %}
+        </div>
+
+        <form action="{% url 'signin' %}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" value="Sign In">
+            <p class="forgot">Forgot Password? <a href="#">Click here</a></p>
+        </form>
+    </div>
 </body>
 </html>

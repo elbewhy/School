@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Details</title>
+    <!-- Add your CSS stylesheets if necessary -->
+</head>
+<body>
+    <h1>{{ course.title }}</h1>
+    <p>{{ course.description }}</p>
+    <p>Start Date: {{ course.start_date }}</p>
+    <p>End Date: {{ course.end_date }}</p>
+    <h2>Instructor</h2>
+    <p>Name: {{ course.instructor.name }}</p>
+    <p>Bio: {{ course.instructor.bio }}</p>
+    <p>Email: {{ course.instructor.email }}</p>
+    <!-- Add any additional course information or resources here -->
+</body>
+</html>
