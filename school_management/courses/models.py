@@ -26,3 +26,11 @@ class Student(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Registration(models.Model):
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.student} - {self.course}"
