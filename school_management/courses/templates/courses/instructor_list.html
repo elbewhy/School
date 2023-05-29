@@ -1,0 +1,9 @@
+<!-- instructor_list.html -->
+{% for instructor in instructors %}
+  <h2>{{ instructor.name }}</h2>
+  <p>Email: {{ instructor.email }}</p>
+  <p>Bio: {{ instructor.bio }}</p>
+  <hr>
+{% empty %}
+  <p>No instructors available.</p>
+{% endfor %}
