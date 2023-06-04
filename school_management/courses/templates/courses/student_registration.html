@@ -1,0 +1,26 @@
+<!-- student_login.html -->
+{% extends "courses/base.html" %}
+
+
+{% block title %}Student Registeration{% endblock%}
+{% load crispy_forms_tags%}
+    
+{% block content %}
+
+    <h1>Student Register</h1>
+    <div class="my-5">
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy}}
+        <p>Have have an account?  <a href="student/login/">Login</a></p>
+        <button type="submit" class="btn btn-success">Register</button>
+        
+        
+        
+                {% comment %} {{ form.as_p }} {% endcomment %}
+        
+    </form>
+</div>
+{% endblock %}
+    
+

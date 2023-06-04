@@ -42,7 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'courses',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -86,6 +92,13 @@ DATABASES = {
 }
 
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
+
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -126,3 +139,11 @@ STATIC_URL = '/static/'
 # https://
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# # For student login and redirect
+# LOGIN_REDIRECT_URL = '/student/dashboard/'
+# LOGOUT_REDIRECT_URL = '/student/login/'
+
+# # For instructor login and redirect
+# INSTRUCTOR_LOGIN_REDIRECT_URL = '/instructor/dashboard/'
+# INSTRUCTOR_LOGOUT_REDIRECT_URL = '/instructor/login/'

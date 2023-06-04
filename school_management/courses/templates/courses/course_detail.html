@@ -1,4 +1,12 @@
 <!-- course_detail.html -->
+{% extends "courses/base.html" %}
+
+{% block content %}
+<!-- Add your course details content here -->
+<h1>Course Name</h1>
 <h2>{{ course.title }}</h2>
 <p>{{ course.description }}</p>
 <p>Instructor: {{ course.instructor.name }}</p>
+
+{% endblock %}
+

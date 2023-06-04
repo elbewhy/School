@@ -1,9 +1,25 @@
 <!-- instructor_list.html -->
-{% for instructor in instructors %}
-  <h2>{{ instructor.name }}</h2>
-  <p>Email: {{ instructor.email }}</p>
-  <p>Bio: {{ instructor.bio }}</p>
-  <hr>
-{% empty %}
-  <p>No instructors available.</p>
-{% endfor %}
+{% extends "courses/base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">Instructors</h1>
+    <div class="row">
+        {% for instructor in instructors %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">{{ instructor.name }}</h5>
+                    <p class="card-text">{{ instructor.bio }}</p>
+                    <p class="card-text"><strong>Email:</strong> {{ instructor.email }}</p>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-md-12">
+            <p>No instructors available.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
