@@ -38,6 +38,13 @@
 4. Access the instructor information to learn more about the instructors associated with each course.
 5. Enjoy using the Course Website to get insights into your courses and instructors.
 
+## Contributors
+
+This project was developed by:
+
+- Benjamin Boateng: Implemented the backend functionality and database management.
+- Abubakar Ruwa : Designed the user interface and frontend development.
+
 ## Contributing
 
 Contributions are welcome! If you'd like to contribute to the School Management project, please follow these steps:
@@ -48,9 +55,6 @@ Contributions are welcome! If you'd like to contribute to the School Management 
 4. Push to the branch: `git push origin feature/your-feature-name`
 5. Submit a pull request.
 
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Acknowledgements
 
