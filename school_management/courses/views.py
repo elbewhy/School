@@ -56,7 +56,11 @@ def student_login(request):
 @login_required
 def student_dashboard(request):
     # Logic for student dashboard
-    return render(request, 'courses/student_dashboard.html')
+    student = Student.objects.get(user=request.user)  # Assuming you have implemented user authentication
+    context = {
+        'student': student,
+    }
+    return render(request, 'courses/student_dashboard.html', context)
 
 def instructor_login(request):
     if request.method == 'POST':

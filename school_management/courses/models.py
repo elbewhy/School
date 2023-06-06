@@ -9,13 +9,24 @@ class Student(models.Model):
 
     def __str__(self):
         return self.user.username if self.user else 'Unassigned'
-
+    
+    
 class Instructor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, default=None)
-    # Additional fields for instructor
+    bio = models.TextField(blank=True)
+    email = models.EmailField()
+    # profile_picture = models.ImageField(upload_to='instructor_profile_pics/', blank=True)
 
     def __str__(self):
-        return self.user.username if self.user else 'Unassigned'
+        return self.user.username
+
+
+# class Instructor(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, default=None)
+#     # Additional fields for instructor
+
+#     def __str__(self):
+#         return self.user.username if self.user else 'Unassigned'
 
 class Course(models.Model):
     title = models.CharField(max_length=200)
