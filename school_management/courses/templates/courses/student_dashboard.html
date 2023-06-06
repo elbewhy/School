@@ -1,0 +1,39 @@
+{% extends "courses/base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome, {{ student.user.username }}</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">My Courses</h5>
+                    <p class="card-text">You are currently enrolled in the following courses:</p>
+                    <ul class="list-group">
+                        {% for course in enrolled_courses %}
+                        <li class="list-group-item">{{ course.title }}</li>
+                        {% empty %}
+                        <li class="list-group-item">No courses enrolled.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Upcoming Assignments</h5>
+                    <p class="card-text">You have the following upcoming assignments:</p>
+                    <ul class="list-group">
+                        {% for assignment in upcoming_assignments %}
+                        <li class="list-group-item">{{ assignment.title }} ({{ assignment.due_date }})</li>
+                        {% empty %}
+                        <li class="list-group-item">No upcoming assignments.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

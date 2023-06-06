@@ -1,0 +1,19 @@
+<!-- course_list.html -->
+{% extends "courses/base.html" %}
+
+{% block content %}
+<h1>Available Courses</h1>
+<!-- Add your course listing content here -->
+{% for course in courses %}
+  <div class="card mb-3">
+    <div class="card-body">
+      <h2 class="card-title">{{ course.title }}</h2>
+      <p class="card-text">{{ course.description }}</p>
+      <p class="card-text">Instructor: {{ course.instructor.user.username }}</p>
+    </div>
+  </div>
+{% empty %}
+  <p>No courses available.</p>
+{% endfor %}
+
+{% endblock %}
