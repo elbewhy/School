@@ -52,15 +52,21 @@ def student_login(request):
     else:
         form = StudentLoginForm()
     return render(request, 'courses/student_login.html', {'form': form})
+
+def logout_view(request):
+    logout(request)
+    return redirect('/')
     
 @login_required
 def student_dashboard(request):
-    # Logic for student dashboard
-    student = Student.objects.get(user=request.user)  # Assuming you have implemented user authentication
+    student, created = Student.objects.get_or_create(user=request.user)
+    courses = student.courses.all()
     context = {
         'student': student,
+        'courses': courses,
     }
     return render(request, 'courses/student_dashboard.html', context)
+
 
 def instructor_login(request):
     if request.method == 'POST':
