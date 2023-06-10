@@ -36,7 +36,7 @@
 2. Log in using your registered credentials.
 3. Explore the list of available courses and click on each course to view more details.
 4. Access the instructor information to learn more about the instructors associated with each course.
-5. Enjoy using the Course Website to get insights into your courses and instructors.
+5. Enjoy using the Website to get insights into your courses and instructors.
 
 ## Contributors
 

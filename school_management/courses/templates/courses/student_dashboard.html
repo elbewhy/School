@@ -1,5 +1,34 @@
 {% extends "courses/base.html" %}
 
+{% load static %}
+
+{% block navigation %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="{% static 'courses/img/logo.png' %}" alt="School Logo" width="50" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/courses/">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/student/login/"> Logout</a>
+                </li>
+               
+                </li>
+                <!-- Add more links as needed -->
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
 {% block content %}
 <div class="container">
     <h1>Welcome, {{ student.user.username }}</h1>
@@ -7,11 +36,11 @@
         <div class="col-md-6">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">My Courses</h5>
-                    <p class="card-text">You are currently enrolled in the following courses:</p>
+                    <h5 class="card-title">Courses Offered</h5>
+                    <p class="card-text">You are enrolled in the following courses:</p>
                     <ul class="list-group">
-                        {% for course in enrolled_courses %}
-                        <li class="list-group-item">{{ course.title }}</li>
+                        {% for course in courses %}
+                        <li class="list-group-item">{{ course.title }}  (Instructor: {{ course.instructor.user.username }})</li>
                         {% empty %}
                         <li class="list-group-item">No courses enrolled.</li>
                         {% endfor %}
@@ -25,7 +54,7 @@
                     <h5 class="card-title">Upcoming Assignments</h5>
                     <p class="card-text">You have the following upcoming assignments:</p>
                     <ul class="list-group">
-                        {% for assignment in upcoming_assignments %}
+                        {% for assignment in assignments %}
                         <li class="list-group-item">{{ assignment.title }} ({{ assignment.due_date }})</li>
                         {% empty %}
                         <li class="list-group-item">No upcoming assignments.</li>
